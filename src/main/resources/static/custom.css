@@ -1,0 +1,23 @@
+#map {
+    height: 75%;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+div.row:nth-child(1){
+background-color: #6bafd1;
+font-family: Segoe Script;
+
+}
+div.row:nth-child(2){
+background-color: #92a4ad;
+font-family: Segoe Script;
+
+}
+body{
+ background-color:#4c66d9:
+    font-family: Segoe Script;
+}
