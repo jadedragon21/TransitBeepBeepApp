@@ -18,6 +18,18 @@ function initMap() {
         });
     }
 
+    const transitLayer = new google.maps.TransitLayer();
+      transitLayer.setMap(map);
+    const trafficLayer = new google.maps.TrafficLayer();
+      trafficLayer.setMap(map);
+
+     let contentString = '<h2> Bus#:  Where Marta is outdated!</h2>';
+
+      let infowindow = new google.maps.InfoWindow({
+            content: contentString
+        })
+    google.maps.event.addListener(marker, 'click', () => infowindow.open(map, marker));
+
 }
 
 //var map;

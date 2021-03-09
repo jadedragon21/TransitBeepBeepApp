@@ -49,14 +49,17 @@
     </div>
 </div>
 <br>
-<div class="col" style="height: 100%; width: 100%;">
+<div class="column" style="height: 100%; width: 100%;">
     <div id="map"></div>
+    <div id="infowindow-content"></div>
+
 </div>
 
 <div th:if="${buses != null and buses.size() > 0}">
     <script th:inline="javascript">
             /*<![CDATA[*/
             var busLocations = /*[[${buses}]]*/;
+
 <!--
             /*]]>*/
             </script>
