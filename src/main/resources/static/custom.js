@@ -10,25 +10,30 @@ function initMap() {
         var marker = new google.maps.Marker({
             position: { lat: parseFloat(busLocations[i].LATITUDE), lng: parseFloat(busLocations[i].LONGITUDE) },
             map: map,
+            //icon for the buses and the animation underneath that.
             icon: {
                 url: "/Catbusbus.png",
                 scaledSize: new google.maps.Size(60, 60)
             },
             animation: google.maps.Animation.BOUNCE
         });
+        //bus number pop up window update
+        let busNum = busLocations[i].VEHICLE;
+        let contentString = '<h2> Bus#: ' + busNum + ' Where the Catbus Rules Atlanta!</h2>';
+                let infowindow = new google.maps.InfoWindow({
+                 content: contentString
+                })
+                google.maps.event.addListener(marker, 'click', () => infowindow.open(map, marker));
     }
-
+    //update to the transit and Traffic layers to the map.
     const transitLayer = new google.maps.TransitLayer();
       transitLayer.setMap(map);
     const trafficLayer = new google.maps.TrafficLayer();
       trafficLayer.setMap(map);
 
-     let contentString = '<h2> Bus#:  Where Marta is outdated!</h2>';
 
-      let infowindow = new google.maps.InfoWindow({
-            content: contentString
-        })
-    google.maps.event.addListener(marker, 'click', () => infowindow.open(map, marker));
+
+
 
 }
 
